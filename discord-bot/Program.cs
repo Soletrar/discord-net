@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Discord;
-using discord_bot.Services;
 using Discord.Commands;
 using Discord.WebSocket;
+
+using discord_bot.Services;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace discord_bot
@@ -22,7 +25,7 @@ namespace discord_bot
 
             var client = services.GetRequiredService<DiscordSocketClient>();
 
-            client.Log += LogAsync;
+            client.Log                                        += LogAsync;
             services.GetRequiredService<CommandService>().Log += LogAsync;
 
 
@@ -44,11 +47,10 @@ namespace discord_bot
 
         private static ServiceProvider ConfigureServices()
         {
-            return new ServiceCollection()
-                .AddSingleton<DiscordSocketClient>()
-                .AddSingleton<CommandService>()
-                .AddSingleton<CommandHandlingService>()
-                .BuildServiceProvider();
+            return new ServiceCollection().AddSingleton<DiscordSocketClient>()
+                                          .AddSingleton<CommandService>()
+                                          .AddSingleton<CommandHandlingService>()
+                                          .BuildServiceProvider();
         }
     }
 }
