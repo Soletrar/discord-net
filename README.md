@@ -1,5 +1,5 @@
 # discord-net
-Discord Bot made with [Discord.Net](https://github.com/discord-net/Discord.Net), .NET 5 and Dependency Injection.
+Discord Bot base made with [Discord.Net](https://github.com/discord-net/Discord.Net), .NET 5 and Dependency Injection.
 
 ## Features
 - [x] One command/module for class.
