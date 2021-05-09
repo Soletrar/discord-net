@@ -78,7 +78,7 @@ namespace discord_bot.Services
 
                 var cmd = message.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0];
 
-                var list = commands.Where(botCommand => Levenshtein.Compare(botCommand, cmd) >= 125).ToList();
+                var list = commands.Where(botCommand => Levenshtein.Compare(cmd, botCommand) >= 125).ToList();
 
                 var length = list.Count;
 
